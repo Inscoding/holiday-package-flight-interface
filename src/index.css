@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    --primary: 217 71% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 71% 25%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 10% 40%;
+    --sidebar-primary: 217 71% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 91% 97%;
+    --sidebar-accent-foreground: 217 71% 25%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 71% 25%;
+
+    /* Custom colors for the travel interface */
+    --fare-banner: 217 71% 22%;
+    --fare-banner-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    
+    /* Logo colors */
+    --logo-dark-green: 145 63% 32%;
+    --logo-leafy-green: 145 55% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Badge colors */
+    --badge-publish: 280 60% 50%;
+    --badge-flexi: 199 89% 48%;
+    --badge-sme: 142 71% 45%;
+    --badge-expressfly: 38 92% 50%;
+    --badge-comfort: 340 82% 52%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 13%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 13%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212 27% 84%;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 217 91% 60%;
+
+    --fare-banner: 217 71% 30%;
+    --fare-banner-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .flight-card {
+    @apply bg-card border border-border rounded-lg p-4 hover:shadow-md transition-shadow;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-2.5 text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground rounded-lg transition-colors cursor-pointer;
+  }
+
+  .nav-item-active {
+    @apply bg-sidebar-accent text-sidebar-accent-foreground font-medium;
+  }
+
+  .tab-active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .tab-inactive {
+    @apply bg-transparent text-foreground hover:bg-muted;
+  }
+
+  .filter-input {
+    @apply bg-card border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring;
+  }
+
+  .star-button {
+    @apply px-3 py-1.5 border border-border rounded text-sm font-medium transition-colors;
+  }
+
+  .star-button-active {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+
+  .fare-badge {
+    @apply px-2 py-0.5 rounded text-xs font-medium;
+  }
+}
